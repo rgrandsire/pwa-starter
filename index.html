@@ -3,7 +3,9 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>PWA Starter</title>
+  <title>Remi's playpen</title>
+  <link rel="icon" type="image/x-icon" href="/RemiLogo.png">
+  <script src="/script/allscripts.js" type="module" defer></script>
 
   <base href="/" />
 
@@ -23,9 +25,6 @@
   <!-- This tag is used by the PWA Starter CLI to identify template projects. Don't remove if you are using the CLI. -->
   <meta name="pwa-starter-template-identity" content="pwa-starter"/>
 
-  <!-- Imports an icon to represent the document. -->
-  <link rel="icon" href="/assets/icons/icon_24.png" type="image/x-icon" />
-
   <!-- Imports the manifest to represent the web application. A web app must have a manifest to be a PWA. -->
   <link rel="manifest" href="/manifest.json" />
 
@@ -36,20 +35,69 @@
     href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.73/dist/themes/dark.css"
     onload="document.documentElement.classList.add('sl-theme-dark');">
 
-  <script type="module" src="/src/app-index.ts"></script>
+<!--  <script type="module" src="/src/app-index.ts"></script>  -->
 </head>
 
 <body>
+  <header>
+    <table>
+        <tr>
+            <td width = "90px"><img src="/RemiLogo.png" alt="Remiware" width="80" height="80"></td>
+            <td><h1>IMe/X Serial To Keyboard</h1></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <h3>
+                    Serial Port access: <label id="Test"></label>
+                </h3>
+            </td>
+        </tr>
+    </table>
+      
+</header>
+
+<table>
+    <tr>
+        <td width = "90px"></td><td></td>
+    </tr>
+    <tr style="text-align: center;"><td></td>
+        <td style="text-align: center;"><button id="doConnect">Connect</button></td>        
+        <td style="text-align: center;"><button id="disConnect" onclick="Disconnect()" disabled>Disconnect</button>
+        </td>
+    </tr> 
+    <tr style="height: 20px;"/>
+    <tr>
+        <td></td><td>Received from Serial port</td><td>To Write as Keyboard</td>
+    </tr>  
+    <tr>
+        <td></td>
+        <td style="text-align: center;"><label><textarea id="zReceive" rows="5" cols="30"></textarea></label></td>
+        <td style="text-align: center;"><label><textarea id="zWrite" rows="5" cols="30"></textarea></label></td>
+    </tr>
+</table>
+<table>
+    <th>Com Setup</th>
+    <tr><td></td>
+        <td><input type="checkbox" id="positiveNum" checked = true>Always send a positive number</td>
+    </tr><tr><td></td>
+        <td><input type="checkbox" id="splitSwap" checked = true>Send result first (swap device ID and measurement data)</td>
+    </tr>
+</table>
   <!-- Our app-index web component. This component is defined in src/pages/app-index.ts-->
   <app-index></app-index>
 
   <script>
+    import { registerSW } from "virtual:pwa-register";
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register(
         '/sw.js'
+        
       );
+      registerSW();
     }
   </script>
+
 </body>
 
 </html>

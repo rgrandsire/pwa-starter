@@ -1,12 +1,12 @@
 {
   "id": "/",
   "scope": "/",
-  "name": "PWA Starter",
+  "name": "Remi Serial Port Test",
   "display": "standalone",
   "start_url": "/",
-  "short_name": "starter",
+  "short_name": "serial",
   "theme_color": "#E1477E",
-  "description": "This is a PWA Starter app",
+  "description": "This is a serial port testing app",
   "orientation": "any",
   "background_color": "#E1477E",
   "related_applications": [],
@@ -14,7 +14,7 @@
   "display_override": ["window-controls-overlay"],
   "icons": [
     {
-      "src": "assets/icons/512x512.png",
+      "src": "RemiLogo.png",
       "sizes": "512x512",
       "type": "image/png"
     },
