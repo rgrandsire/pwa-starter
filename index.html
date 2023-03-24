@@ -72,16 +72,16 @@
     </tr>  
     <tr>
         <td></td>
-        <td style="text-align: center;"><label><textarea id="zReceive" rows="5" cols="30"></textarea></label></td>
-        <td style="text-align: center;"><label><textarea id="zWrite" rows="5" cols="30"></textarea></label></td>
+        <td style="text-align: center;"><label for= "zReceive"> <textarea id="zReceive" rows="5" cols="30"></textarea></label></td>
+        <td style="text-align: center;"><label for = "zWrite"> <textarea id="zWrite" rows="5" cols="30"></textarea></label></td>
     </tr>
 </table>
 <table>
     <th>Com Setup</th>
     <tr><td></td>
-        <td><input type="checkbox" id="positiveNum" checked = true>Always send a positive number</td>
+        <td><label for= "positiveNum"><input type="checkbox" id="positiveNum" checked = true />Always send a positive number</label></td>
     </tr><tr><td></td>
-        <td><input type="checkbox" id="splitSwap" checked = true>Send result first (swap device ID and measurement data)</td>
+        <td><label for ="splitSwap"><input type="checkbox" id="splitSwap" checked = true />Send result first (swap device ID and measurement data)</label></td>
     </tr>
 </table>
   <!-- Our app-index web component. This component is defined in src/pages/app-index.ts-->
